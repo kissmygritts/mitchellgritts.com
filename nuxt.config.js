@@ -1,6 +1,7 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+  dev: process.env.NODE_ENV !== 'production',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -43,6 +44,14 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
   ],
+
+  generate: {
+    async routes () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content().fetch()
+      return files.filter(file => file.isPublished === false)
+    }
+  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {

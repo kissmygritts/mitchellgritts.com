@@ -1,7 +1,7 @@
 ---
 title: Getting started
 publishedOn: 2021-05-18
-isPublished: true
+isPublished: false
 category: projects
 tags: [web development, r, nuxt, vue]
 description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'

@@ -1,6 +1,7 @@
 ---
-title: "I shipped a side project over the weekend"
+title: "I Shipped a Side Project Over the Weekend"
 publishedOn: 2020-05-18
+updatedOn: 2020-05-18
 isPublished: true
 category: projects
 tags: [web development, r, nuxt, vue]

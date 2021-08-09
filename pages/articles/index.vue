@@ -18,11 +18,16 @@
 </template>
 
 <script>
+const isDev = process.env.NODE_ENV === 'development'
+
 export default {
   async asyncData({ $content }) {
+    const where = isDev ? {} : { isPublished: true }
+
     const articles = await $content('articles')
-      .only(['title', 'description', 'slug', 'tags'])
-      .sortBy('publishedOn')
+      .where(where)
+      .only(['title', 'description', 'slug', 'tags', 'path'])
+      .sortBy('publishedOn', 'desc')
       .fetch()
 
     return { articles }
