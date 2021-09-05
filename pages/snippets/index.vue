@@ -2,13 +2,13 @@
   <div class="pt-4 mx-auto max-4xl-px2">
     <div class="px-2 md:px-0">
       <div>
-        <h1 class="py-2 text-3xl text-malachite capitalize">Snippets</h1>
+        <h1 class="py-2 text-3xl text-electric-blue capitalize">Snippets</h1>
         <p class="text-periwinkle">
           Short code snippets or notes that I stumble upon.
         </p>
       </div>
 
-      <div class="mt-12">
+      <div class="mt-12 pb-16">
 
           <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -32,7 +32,7 @@
                   </thead>
                   <tbody class="divide-y divide-gray-800">
                     <tr v-for="snippet in snippets" :key="snippet.slug">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-malachite hover:text-electric-blue">
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-electric-blue hover:text-malachite">
                         <nuxt-link :to="snippet.path">
                           {{ snippet.title }}
                         </nuxt-link>
@@ -63,7 +63,7 @@ export default {
   async asyncData({ $content }) {
     const snippets = await $content('snippets')
       .only(['title', 'updatedOn', 'topic', 'description', 'slug', 'path'])
-      .sortBy('updatedOn')
+      .sortBy('updatedOn', 'desc')
       .fetch()
 
     return { snippets }

@@ -13,7 +13,7 @@
     </div>
 
     <!-- content -->
-    <div class="mt-10 px-24">
+    <div class="mt-10 px-24 pb-16">
       <h2 class="py-2 text-3xl font-light text-malachite">Recent Articles</h2>
       
       <div class="space-y-2 mt-2">

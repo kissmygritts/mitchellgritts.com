@@ -1,7 +1,7 @@
 <template>
   <article class="pt-4 mx-auto max-w-3xl px-2">
     <div class="px-2 md:px-0">
-      <h1 class="text-4xl text-malachite capitalize">{{ snippet.title }}</h1>
+      <h1 class="text-4xl text-malachite">{{ snippet.title }}</h1>
       <p class="mt-2 font-light opacity-75">
         Topic:
         <span class="mr-1">#{{ snippet.topic }}</span>
