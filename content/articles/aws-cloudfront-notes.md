@@ -256,3 +256,41 @@ A biologist logs into raptor nests and is returned a token. Every subsequent req
 [^3]: CloudFront allows multiple behaviors in a single distribution, all pointing to different (or the same) origin. The cache strategies are tied to these behaviors. 
 
 [^2]: I lied. I can think of a way this might work. Suppose an API key (or username) is passed in the query string. This will not change the response from the server. So don't use this in the cache key. Perhaps use the **Include all query strings except** to exclude this parameter.
+
+## Troubleshooting
+
+A few errors that I've had along the way.
+
+### CORS, ofcourse
+
+This ends up biting me in the rear more often than not. When connecting to the API from a front-end I was receiving CORS error failed error on the `HTTP OPTIONS` request. Initially this was because I didn't include `OPTIONS` in the allowed methods. Set this prop like so:
+
+```js
+const dist = new cloudfront.Distribution(this, 'cloudfront', {
+	defaultBehavior: {
+		allowedMethods: cloudfront.AllowedMethods.ALLOW_GET_HEAD_OPTIONS
+		// ... other behavior props
+	},
+	// ... other distribution props
+})
+```
+
+Another CORS related error had to do with the headers that were, or weren't being forwarded to the origin (from CloudFront to the load balancer). I think there are two ways to solve this. (You probably only need one of these).
+
+1. Cache control policy: changes to this policy will change how CloudFront caches objects. Each item added to this list will be included in the cache key.
+2. Orgin request policy: this policy will change what is forwarded from the viewer to origin, i.e. client -> CloudFront -> load balancer. Use the managed All Viewer policy which will forwards all viewer headers to the origin. If this resolves the CORS errors use this method. It will likely increase the cache hit ratio.
+
+```js
+const dist = new cloudfront.Distribution(this, 'cloudfront', {
+	defaultBehavior: {
+		cachePolicy: new cloudfront.CachePolicy(this, 'cachePolicy', {
+			headerBehavior: cloudfront.CacheHeaderBehavior.allowList('Host', 'Access-Control-Request-Headers', 'Access-Control-Request-Method'),
+			// ... other cache policy props
+		}),
+		originRequestPolicy: cloudfront.OriginRequestPolicy.ALL_VIEWER
+		// ... other behavior props
+	},
+	// ... other distribution props
+})
+```
+

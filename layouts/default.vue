@@ -4,12 +4,12 @@
 
       <!-- header -->
       <div class="flex items-center justify-between px-2 lg:px-0 py-4 text-periwinkle">  
-          <div class="text-2xl py-1">
+          <div class="text-normal md:text-2xl py-1">
             <nuxt-link to="/" class="hover:text-electric-blue">
               Mitchell Gritts
             </nuxt-link>
           </div>
-          <div class="flex space-x-6 text-lg py-1 px-2 opacity-80">
+          <div class="flex space-x-6 text-sm md:text-lg py-1 px-2 opacity-80">
             <span class="inline-block hover:text-electric-blue">
               <nuxt-link to="/articles">Articles</nuxt-link>
             </span>
