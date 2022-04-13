@@ -8,7 +8,7 @@ tags: [postgres, postgis, wsl, sql]
 description: "Running Postgres on Windows Subsystem for Linux using Ubuntu."
 ---
 
-I generally develop on my Mac. But, working for a state agency means that all our work issued computers are Dells. I find it nearly impossible to develop effeciently on a Windows machine. Sometimes I can't avoid it and I need to develop on the work computer. Or, more likely, I need to get my coworkers setup to run a process I've developed on my Mac on their Windows computers. 
+I generally develop on my Mac. But, working for a state agency means that all our work issued computers are Dells. I find it nearly impossible to develop efficiently on a Windows machine. Sometimes I can't avoid it and I need to develop on the work computer. Or, more likely, I need to get my coworkers setup to run a process I've developed on my Mac on their Windows computers. 
 
 This post assumes you've already installed WSL, and Ubuntu. [Use this documentation if you haven't](https://docs.microsoft.com/en-us/windows/wsl/install).
 
@@ -35,7 +35,7 @@ sudo apt-get -y install postgresql postgresql-client
 
 ## Install PostGIS
 
-Are you doing spatial stuff? Then you prorably want PostGIS too.
+Are you doing spatial stuff? Then you probably want PostGIS too.
 
 1. [Add UbuntuGIS PPA](https://wiki.ubuntu.com/UbuntuGIS).
 2. Update `apt`.
@@ -71,4 +71,4 @@ with login superuser createdb createrole replication bypassrls password 'passwor
 psql postgres
 ```
 
-No you don't need to use `sudo -u postgres psql` everytime.
+Now you don't need to use `sudo -u postgres psql` every time.

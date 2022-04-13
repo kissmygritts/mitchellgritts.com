@@ -11,7 +11,7 @@
         I'm a wildlife ecologist, data analyst, and web developer based in Reno, Nevada.
       </p>
 
-      <div class="mt-10 text-left">
+      <div class="mt-10 text-left max-w-3xl mx-auto">
         <h2 class="py-2 text-3xl font-light text-malachite">Recent Articles</h2>
         
         <div class="space-y-2 mt-2">

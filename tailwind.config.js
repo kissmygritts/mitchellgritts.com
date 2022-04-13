@@ -2,41 +2,41 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'midnight-blue': '#01162D',
-        'electric-blue': '#5FE4F6',
-        'malachite': '#22DA6E',
+        'midnight-blue': '#222941',
+        'electric-blue': '#26D8EC',
+        'malachite': '#C2FFAD',
         'minion-yellow': '#ffe74c',
         'hot-pink': '#F680F5',
-        'periwinkle': '#D6DEEB',
+        'periwinkle': '#F2F3F8',
         'cool-gray': '#4B6479'
       },
       typography: {
         DEFAULT: {
           css: {
-            color: '#D6DEEB',
+            color: '#F2F3F8',
             a: {
-              color: '#5FE4F6',
+              color: '#26D8EC',
               '&:hover': {
-                color: '#22DA6E'
+                color: '#C2FFAD'
               }
             },
             'a code': {
-              color: '#5FE4F6',
+              color: '#26D8EC',
               '&:hover': {
-                color: '#5FE4F6'
+                color: '#26D8EC'
               }
             },
             'h1, h2, h3, h4, h5': {
-              color: '#22DA6E',
+              color: '#C2FFAD',
               'font-weight': 'normal'
             },
-            // h1: { color: '#22DA6E' },
-            // h2: { color: '#22DA6E' },
-            // h3: { color: '#22DA6E' },
-            // h4: { color: '#22DA6E' },
-            // h5: { color: '#22DA6E' },
+            // h1: { color: '#C2FFAD' },
+            // h2: { color: '#C2FFAD' },
+            // h3: { color: '#C2FFAD' },
+            // h4: { color: '#C2FFAD' },
+            // h5: { color: '#C2FFAD' },
             code: {
-              color: '#D6DEEB',
+              color: '#F2F3F8',
               opacity: 0.8
             },
             'pre code': {
@@ -49,14 +49,14 @@ module.exports = {
               'background-color': '#011023',
               // border: '1px solid #9ab7bc80'
             },
-            strong: { color: '#D6DEEB' },
+            strong: { color: '#F2F3F8' },
             blockquote: {
-              color: '#5FE4F6',
-              'border-left-color': '#5FE4F6',
+              color: '#26D8EC',
+              'border-left-color': '#26D8EC',
               opacity: 0.8
             },
             th: {
-              color: '#D6DEEB',
+              color: '#F2F3F8',
               opacity: 0.8
             }
           }
@@ -72,6 +72,7 @@ module.exports = {
       `layouts/**/*.vue`,
       `pages/**/*.vue`,
       `plugins/**/*.{js,ts}`,
+      `assets/css/tailwind.css`,
       `nuxt.config.{js,ts}`,
     ],
   },

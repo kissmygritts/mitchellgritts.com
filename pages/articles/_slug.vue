@@ -8,7 +8,7 @@
       </p>
     </div>
 
-    <nuxt-content class="py-16 px-2 md:px-0 prose prose-lg md:prose-xl prose-periwinkle" :document="article" />  
+    <nuxt-content class="py-16 px-2 md:px-0 prose prose-lg prose-periwinkle" :document="article" />  
   </article>  
 </template>
 

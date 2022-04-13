@@ -2,7 +2,7 @@
   <div class="pt-4 mx-auto max-4xl-px2">
     <div class="px-2 md:px-0">
       <div>
-        <h1 class="py-2 text-3xl text-electric-blue capitalize">Snippets</h1>
+        <h1 class="py-2 text-3xl text-malachite capitalize">Snippets</h1>
         <p class="text-periwinkle">
           Short code snippets or notes that I stumble upon.
         </p>
@@ -32,8 +32,8 @@
                   </thead>
                   <tbody class="divide-y divide-gray-800">
                     <tr v-for="snippet in snippets" :key="snippet.slug">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-electric-blue hover:text-malachite">
-                        <nuxt-link :to="snippet.path">
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-malachite">
+                        <nuxt-link :to="snippet.path" class="hover:underline">
                           {{ snippet.title }}
                         </nuxt-link>
                       </td>
